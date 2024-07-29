@@ -1,0 +1,42 @@
+.recipes-list-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  background-color: var(--color-fondo-claro);
+  padding: 20px;
+  padding-top: 30px;
+}
+
+.recipes-list {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 25px;
+}
+
+.paginate-container {
+  display: flex;
+  justify-content: center;
+  background-color: var(--color-fondo-claro);
+  gap: 10px;
+  padding: 12px;
+  flex-wrap: wrap;
+}
+
+.button-paginate-container {
+  & button {
+    border: none;
+    background-color: var(--color-botones);
+    padding: 3px 8px;
+    color: var(--color-fondo-claro);
+  }
+}
+
+.button-paginate-container:hover button {
+  cursor: pointer;
+}
+
+.isSelect button {
+  scale: 1.25;
+}

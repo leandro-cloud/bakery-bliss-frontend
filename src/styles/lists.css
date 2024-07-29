@@ -1,0 +1,17 @@
+@import 'variables.css';
+
+.main {
+  display: flex;
+  justify-content: center;
+  margin-top: 8vh;
+  width: 100%;
+
+}
+
+.container {
+  width: 80%;
+  & h2 {
+    margin: 15px 0 8px 0;
+    color: var(--color-texto);
+  }
+}

@@ -1,0 +1,28 @@
+@import 'variables.css';
+
+.homepage{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: var(--color-fondo);
+}
+
+.homepage-container {
+  margin-top: 8vh;
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 30px;
+
+  & h2 {
+    margin: 15px 0 8px 0;
+    color: var(--color-texto);
+  }
+}
+
+@media only screen and (max-width: 780px) {
+  .homepage-container {
+    width: 100%;
+  }
+}

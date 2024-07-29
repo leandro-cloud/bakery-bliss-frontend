@@ -1,0 +1,370 @@
+@import 'variables.css';
+
+.recipe-main {
+  width: 100%;
+  margin-top: 8vh;
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  justify-content: center;
+  background-color: var(--color-fondo-claro);
+  align-items: center;
+  color: var(--color-texto);
+  
+
+  & h2, h3, h4, h5, p {
+    font-family: "Indie Flower", cursive;
+  }
+
+  & strong {
+    font-family: "Indie Flower", cursive;
+  }
+
+}
+
+.recipe-board {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  padding: 30px
+}
+
+.title-container-recipe {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 80px;
+  border-bottom: 2px solid var(--color-texto);
+  border-top: 2px solid var(--color-texto);
+  margin-top: 10px;
+  position: relative;
+
+  & h2 {
+    font-size: 40px;
+    text-align: center;
+    padding-left: 0;
+    color: var(--color-texto);
+    font-weight: bold;
+    
+  }
+}
+
+.recipe-main-container {
+  width: 80%;
+  background-color: var(--color-fondo);
+  position: relative;
+}
+
+
+
+.recipe-container {
+  display: grid;
+  width: 100%;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+  flex-direction: column;
+  gap: 25px;
+}
+
+.image-detail-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+
+
+
+.image-recipe-container {
+  width: 100%;
+  grid-row: 1 / 2;
+}
+
+.imagen {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.container-details {
+  display: flex;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  padding-top: 15px;
+  gap: 8px;
+  flex-direction: column;
+}
+
+.average-rate-recipe {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+
+.prep-time {
+  display: flex;
+  gap: 6px;
+
+  & div {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.favorite-icon {
+  position: absolute;
+  right: 5px;
+  top: 4px;
+}
+
+.favorite-icon:hover {
+  cursor: pointer;
+}
+
+.categorias {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lista-categorias {
+  display: flex;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0;
+  gap: 15px;
+
+  & li {
+    background-color: var(--color-fondo);
+    padding: 4px 15px;
+    border: 1px solid var(--color-principal);
+  }
+}
+
+.recipe-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ingredients-instructions-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.lista-ingredientes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style-type: none;
+  padding: 0;;
+}
+ .ingrediente input:checked + label li p {
+  text-decoration: line-through;
+ }
+
+ .instruction input:checked + label li p {
+  text-decoration: line-through;
+ }
+
+ .li-icon-container {
+  display: flex;
+  gap: 6px;
+ }
+
+ .li-icon-container:hover {
+  color: var(--color-principal);
+ }
+
+ .icon {
+  display: flex;
+  align-items: center;
+ }
+
+ .ingredientes {
+  border-bottom: 2px solid var(--color-texto);
+  padding-bottom: 25px;
+ }
+ 
+ .instrucciones, .ingredientes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+
+ }
+
+ .parrafo-instrucciones {
+  white-space: pre-wrap;
+ }
+
+.comentarios-section, .valoracion-section {
+  width: 80%;
+  background-color: var(--color-fondo-claro);
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  justify-content: center;
+  margin: 20px 0;
+  padding: 10px 20px;
+  
+}
+
+.comentario-container {
+  background-color: var(--color-fondo);
+  display: flex;
+  padding: 20px;
+  gap: 15px
+}
+
+.comentarios, .valoracion {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+
+.comentario {
+  border-left: 1px solid var(--color3);
+  width: 100%;
+  padding-left: 8px;
+} 
+
+.button-valoracion {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+
+  & button {
+    background-color: var(--color-botones);
+    border: none;
+    color: var(--color-fondo-claro);
+    padding: 5px 15px;
+  }
+
+  & .cancelar, .eliminar {
+    background-color: var(--color3);
+  }
+}
+
+.input-comentario {
+  width: 100%; 
+  height: 100px; 
+  resize: vertical; 
+  font-family: inherit;
+}
+
+.button-valoracion button:hover {
+  cursor: pointer;
+}
+
+.update-delete-buttons {
+  display: flex;
+  gap: 32px;
+}
+
+.update-delete-buttons button {
+  padding: 8px 16px;
+  color: var(--color-fondo-claro);
+  border: none;
+}
+
+.delete-modal {
+  position: fixed;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(51, 51, 51, 0.45);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.modal-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1.1);
+}
+
+.modal-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  max-width: 500px;
+  padding: 42px;
+  gap: 25px;
+  background-color: var(--color-fondo-claro);
+  box-shadow: 0px 0px 3px 0px rgba(56, 55, 54, 0.8);
+  transform: scale(0.9);
+  transition: transform 0.3s ease-in-out;
+}
+
+.modal-visible .modal-container {
+  transform: scale(1);
+}
+
+.modal-icon {
+  display: flex;
+  justify-content: center;
+  height: 50px;
+}
+
+.modal-warning {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  text-align: center;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.modal-buttons button {
+  padding: 8px 16px;
+  color: var(--color-fondo-claro);
+  border: none;
+}
+
+.eliminar {
+  background-color: var(--color3);
+}
+
+.eliminar:hover {
+  cursor: pointer;
+}
+
+.modificar {
+  background-color: var(--color-botones);
+}
+
+.modificar:hover {
+  cursor: pointer;
+}
+
+.cancelar {
+  background-color: var(--color-botones);
+}
+
+.cancelar:hover {
+  cursor: pointer;
+}
+
+.user-names-rate, .user-comment-rate {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif !important;
+  font-size: 15px;
+}
+
+.rate-star:hover {
+  cursor: pointer;
+}

@@ -1,0 +1,259 @@
+@import 'variables.css';
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  height: 8vh;
+  padding: 0 15px;
+  background-color: var(--color-principal);
+  position: fixed;
+  z-index: 110;
+}
+
+.title {
+  font-family: 'Great Vibes', cursive;
+  color: var(--color-fondo);
+  font-size: 38px;
+}
+
+.logo-container  {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  color: var(--color-fondo);
+  
+  & .title:hover {
+    cursor: pointer;
+  }
+  
+  & h1 { 
+    white-space: nowrap;
+  }
+}
+
+.barra-busqueda-container {
+  display: flex;
+  width: 35%;
+  align-items: center;
+  justify-content: center;
+  height: 50%;
+  & label {
+    width: 100%;
+  }
+  & input {
+    width: 90%;
+    height: 100%;
+    padding: 0 4px;
+    background-color: var(--color-fondo);
+    border: none;
+    outline: none;
+  }
+  & .search-icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: var(--color-semifondo);
+    border: none;
+    color: var(--color-fondo);
+    cursor: pointer;
+  }
+}
+
+.link-container {
+  display: flex;
+  align-items: center;
+  gap: 15px; 
+  & .header-link {
+    color: var(--color-fondo);
+    font-size: large;
+    font-weight: 500;
+    text-decoration: none;
+  }
+}
+
+.user-container-menu {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: var(--color-fondo);
+}
+
+.menu-container, .menu,
+.user-menu-container, .user-menu {
+  height: 100%;
+  display: flex;
+  padding: 0 10px 0 0;
+  align-items: center;
+}
+
+.user-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-principal);
+  height: 100%;
+  aspect-ratio: 1 / 1;
+  & img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: 100%;
+  }
+}
+
+.user-image:hover {
+  cursor: pointer;
+}
+
+.user-menu-container, .user-menu {
+  padding: 0;
+}
+
+.user-menu-desplegable {
+  position: absolute;
+  top: 8vh;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--color-fondo);
+  gap: 12px;
+  color: var(--color-texto);
+  padding: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+
+  & div {
+    background-color: inherit;
+    padding: 10px 40px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+
+  & div:hover {
+    background-color: var(--color-principal);
+    cursor: pointer;
+  }
+}
+
+.user-menu:hover .user-menu-desplegable {
+  opacity: 1;
+  visibility: visible;
+  z-index: 10;
+}
+
+.menu-desplegable {
+  position: absolute;
+  top: 8vh;
+  left: 0;
+  min-width: 65vw;
+  background-color: var(--color-fondo);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  padding: 20px 0;
+  flex-wrap: wrap;
+  color: var(--color-principal);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+  & h3 {
+    color: var(--color-texto);
+  }
+}
+
+.menu:hover .menu-desplegable {
+  opacity: 1;
+  visibility: visible;
+  z-index: 10;
+}
+
+.menu-categorias, .menu-dificultad {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 0 50px;
+  flex: auto;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.menu-categorias::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 90%;
+  width: 1px; 
+  background-color: var(--color-semifondo);
+}
+
+.menu-dificultad {
+  min-width: 240px;
+  flex-basis: 0;
+  flex-grow: 1;
+}
+.ul-categorias {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  list-style: none;
+  padding-left: 0;
+}
+
+.uls {
+  list-style: none;
+  padding-left: 0;
+  gap: 15px;
+  font-weight: 500;
+}
+
+
+.ul-dificultad {
+  display: grid;
+}
+
+.uls li:hover {
+  color: var(--color3);
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+  .username-container {
+    display: none;
+  }
+
+  .header-register {
+    display: none;
+  }
+
+}
+
+@media only screen and (max-width: 640px) {
+  .menu-desplegable {
+    gap: 15px;
+  }
+
+  .username-container {
+    display: block;
+  }
+
+  .barra-busqueda-container {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 460px) {
+  .username-container {
+    display: none;
+  }
+}

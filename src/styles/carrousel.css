@@ -1,0 +1,150 @@
+/* Carousel.css */
+@import 'variables.css';
+
+.main-carrousel {
+  display: flex;
+  height: 55vh;
+  justify-content: center;
+  background-color: transparent;
+}
+
+.carrousel-section {
+  display: flex;
+  width: 100%;
+  position: relative;
+}
+
+.carrousel-conainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.top-title {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  height: 10%;
+  padding: 0 60px;
+  top: 15px;
+  left: -10px;
+  background-color: #e9af8ecb;
+  color: var(--color-fondo);
+  font-size: 15px;
+  font-weight: 500;
+  z-index: 100;
+  clip-path: polygon(10% 0%, 90% 0%, 85% 50%, 90% 100%, 10% 100%, 15% 50%);
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+
+.image.active {
+  opacity: 1;
+}
+
+.button {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  top: 50%;
+  margin: 0 10px;
+  transform: translateY(-50%);
+  background-color: transparent;
+  border: none;
+}
+
+.button:hover {
+  scale: 1.1;
+  cursor: pointer;
+}
+
+.prev-button {
+  left: 0;
+  z-index: 100;
+}
+
+.next-button {
+  right: 0;
+}
+
+.dot-container {
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 15px;
+  display: flex;
+  gap: 20px;
+  height: 10px;
+}
+
+.dot {
+  background-color: var(--color-fondo);
+  width: 10px;
+  border-radius: 100%;
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.selected {
+  background-color: var(--color-principal);
+}
+
+.detail {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  min-width: 23%;
+  gap: 15px;
+  right: 0;
+  top: 50%;
+  margin-right: 5%;
+  background-color: #f5f2eca4;
+  transform: translateY(-50%);
+  padding: 45px 40px;
+  opacity: 0;
+  transition: opacity 2s ease-in-out;
+  border-left: 3px solid var(--color-principal);
+
+  & button {
+    background-color: var(--color-botones);
+    border: none;
+    color: var(--color-fondo);
+    height: 34px;
+  }
+
+  & h3 {
+    color: var(--color-texto);
+  }
+
+  & p {
+    color: var(--color-texto-claro);
+  }
+
+  & button:hover {
+    cursor: pointer;
+  }
+}
+
+.detail.active {
+  opacity: 1;
+}
+
+@media only screen and (max-width: 640px) {
+  .main-carrousel {
+    height: 40vh;
+  }
+}
